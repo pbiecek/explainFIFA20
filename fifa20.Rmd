@@ -124,19 +124,19 @@ options(
 )
 
 
-fifa_selected_40 <- fifa20_selected[1:2, ]
+fifa_selected_40 <- fifa20_selected[c(1:40, 61), ]
 
 fifa20_ms <- modelStudio(fifa_gbm_exp, 
                          new_observation = fifa_selected_40,
                          B = 5, N = 300,
                          parallel = TRUE,
-                         options = modelStudioOptions(margin_left = 155, margin_ytitle = 150),
+                         options = modelStudioOptions(margin_left = 175, margin_ytitle = 170),
                          digits = 0)
 
 fifa20_ms
 
 
-
 r2d3::save_d3_html(fifa20_ms, file = "fifa20_ms.html")
+
 ```
 
