@@ -130,7 +130,8 @@ fifa20_ms <- modelStudio(fifa_gbm_exp,
                          new_observation = fifa_selected_40,
                          B = 5, N = 300,
                          parallel = TRUE,
-                         options = modelStudioOptions(margin_left = 175, margin_ytitle = 170),
+                         options = modelStudioOptions(margin_left = 175, margin_ytitle = 120,
+                        ms_title = "Interactive Model Studio for ⚽⚽⚽   FIFA 20 ⚽⚽⚽  (GBM model) "),
                          digits = 0)
 
 fifa20_ms
