@@ -109,6 +109,12 @@ library("ggplot2")
 library("scales")
 plot(fifa_pg_gbm, digits = 0, max_features = 10) +  
   scale_y_continuous(labels = dollar_format(suffix = "€", prefix = ""), name = "Estimated value", limits = 1000000*c(1,100), breaks = 1000000*c(1,25,50,75,100))
+
+
+fifa_pg_gbm <- shap(fifa_gbm_exp, new_observation = new_observation)
+plot(fifa_pg_gbm, max_features = 10)
+
+
 ```
 
 # modelStudio app
@@ -131,7 +137,10 @@ fifa20_ms <- modelStudio(fifa_gbm_exp,
                          B = 5, N = 300,
                          parallel = TRUE,
                          options = modelStudioOptions(margin_left = 175, margin_ytitle = 120,
-                        ms_title = "Interactive Model Studio for ⚽⚽⚽   FIFA 20 ⚽⚽⚽  (GBM model) "),
+                        ms_title = "Interactive Model Studio for ⚽⚽⚽   FIFA 20 ⚽⚽⚽  (GBM model) "
+#                        ,
+#                        show_boxplot = FALSE
+),
                          digits = 0)
 
 fifa20_ms
