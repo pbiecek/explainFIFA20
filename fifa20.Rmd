@@ -8,7 +8,7 @@ output:
 # Install packages
 
 ```{r eval=FALSE}
-install.packages(c("DALEX", "modelStudio", "ingredients", "iBreakDown", "gbm")
+install.packages(c("DALEX", "modelStudio", "ingredients", "iBreakDown", "gbm"))
 ```
 
 # Read data
